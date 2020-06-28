@@ -4,7 +4,7 @@
   "description": "`@zecos/input` material-ui version",
   "author": "zecos",
   "license": "MIT",
-  "repository": "zecos/inputs-basic",
+  "repository": "zecos/zecos",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
