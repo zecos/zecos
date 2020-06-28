@@ -1,0 +1,12 @@
+.result {
+  padding: 20px;
+  border-radius: 4px;
+  background: #2E3440;
+}
+.result select {
+  color: black;
+}
+.resultHeading {
+  padding-left: 2px;
+  font-weight: bold;
+}
