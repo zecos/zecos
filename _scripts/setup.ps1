@@ -4,6 +4,8 @@
 
  foreach ($lib in $libs) {
    cd "../$lib";
-   echo "publishing $lib"
-    npm version patch; npm publish;
+   echo "yarn installing $lib"
+   yarn;
  }
+
+ cd ..

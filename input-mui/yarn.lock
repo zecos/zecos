@@ -786,6 +786,13 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@zecos/field@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@zecos/field/-/field-0.0.5.tgz#3756802efca96ebb22c1186b98b60636ea70fd5f"
+  integrity sha512-7tZ2yLRHdmhoUBiVb/KjgafV315xziyq7UACkhe84a9hKeJwUwu+z+82gvrNt29658vccBonHzhuWnhtvXRFqA==
+  dependencies:
+    "@zecos/validatorz" "0.0.1"
+
 "@zecos/fields@^0.0.0":
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/@zecos/fields/-/fields-0.0.0.tgz#e5dcbdb5690cd3fad60e57a7b6f3428b7951cec4"

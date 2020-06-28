@@ -1,6 +1,6 @@
 {
   "name": "@zecos/input-mui",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "`@zecos/input` material-ui version",
   "author": "zecos",
   "license": "MIT",
@@ -37,9 +37,11 @@
     "test:watch": "react-scripts-ts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepublish": "rollup -c" 
+    "prepublish": "rollup -c"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@zecos/field": "^0.0.5"
+  },
   "peerDependencies": {
     "react": "^15.0.0 || ^16.0.0"
   },

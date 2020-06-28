@@ -1,6 +1,6 @@
 {
   "name": "@zecos/input-picker",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "`@zecos/input` material-ui input pickersversion",
   "author": "zecos",
   "license": "MIT",
@@ -37,7 +37,7 @@
     "test:watch": "react-scripts-ts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepublish": "rollup -c" 
+    "prepublish": "rollup -c"
   },
   "dependencies": {},
   "peerDependencies": {
