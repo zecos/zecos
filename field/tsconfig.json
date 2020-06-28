@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "lib": ["es2019", "dom"],
+    "module": "commonjs",
+    "outDir": "dist",
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "noEmitOnError": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "declaration": true,
+    "noUnusedLocals": true,
+  },
+  "files": [
+    "lib.ts"
+  ],
+  "include": [
+    "lib.test.ts"
+  ],
+}

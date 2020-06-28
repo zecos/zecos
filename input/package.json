@@ -1,6 +1,6 @@
 {
   "name": "@zecos/input",
-  "version": "0.0.15",
+  "version": "0.0.17",
   "description": "Input UI components for zecos",
   "author": "Zane Hitchcox",
   "license": "MIT",
@@ -28,6 +28,7 @@
   },
   "types": "dist/src/index.d.ts",
   "dependencies": {
+    "@zecos/field": "^0.0.0",
     "@zecos/fieldz": "^0.0.8"
   },
   "peerDependencies": {

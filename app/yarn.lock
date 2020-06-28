@@ -1732,11 +1732,6 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
-"@zecos/inputz-basic@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@zecos/inputz-basic/-/inputz-basic-0.0.1.tgz#cac7fb4fcedb9311920c7066d50fdbc5060f09bb"
-  integrity sha512-kRS6mNhx88d5Zrg10gRHYG/0Jw2fN98uzes+aknnooG5eCTU2tWfc5c7Ox6pJFW6XLHLlDcHw71CVEHTlbjMOA==
-
 "@zecos/validators@^0.0.0":
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/@zecos/validators/-/validators-0.0.0.tgz#99171a82f82ee77f94509276b3c010866bb5d590"
@@ -4284,11 +4279,6 @@ fb-watchman@^2.0.0:
   integrity sha1-VOmr99+i8mzZsWNsWIwa/AXeXVg=
   dependencies:
     bser "^2.0.0"
-
-fieldz@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/fieldz/-/fieldz-0.1.1.tgz#8510ffb4c1265fd527702b86bcc2c6b25e83bb1d"
-  integrity sha512-BoGwXbiwFcZ1/+AFd7sW30YAojN+vFuRlgjVQ/BT2xHBIxUJN1ze+XjhIRMZA7un/DJ2ehueY3ZafZxkHZ8MLQ==
 
 figgy-pudding@^3.5.1:
   version "3.5.1"

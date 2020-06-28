@@ -1,0 +1,42 @@
+{
+  "devDependencies": {
+    "@testing-library/react": "^9.3.0",
+    "expect": "^24.9.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "tezt": "^1.1.0",
+    "validatorz": "^2.3.3",
+    "typescript": "^3.7.3"
+  },
+  "name": "@zecos/field",
+  "description": "form fields state management",
+  "version": "0.0.0",
+  "main": "dist/lib.js",
+  "dependencies": {
+    "@zecos/validatorz": "0.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zecos/field.git"
+  },
+  "keywords": [
+    "fp",
+    "functional programming",
+    "field",
+    "forms",
+    "form",
+    "fields",
+    "react"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zecos/field/issues"
+  },
+  "homepage": "https://github.com/zecos/field#readme",
+  "peerDependencies": {}
+}

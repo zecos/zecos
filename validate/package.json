@@ -1,0 +1,42 @@
+{
+  "name": "@zecos/validate",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepublish": "tsc",
+    "start": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zecos/validate.git"
+  },
+  "keywords": [
+    "validation",
+    "validator",
+    "validators",
+    "validate",
+    "fp",
+    "function programming",
+    "string validation",
+    "number validation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zecos/validate/issues"
+  },
+  "homepage": "https://github.com/zecos/validate#readme",
+  "dependencies": {
+    "human-list": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.12",
+    "expect": "^24.9.0",
+    "tezt": "^1.1.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  }
+}

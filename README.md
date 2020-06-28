@@ -1,3 +1,3 @@
 ### zecos
 
-For full documentation, please see https://zecos.io
+For full usage documentation, please see https://zecos.io
