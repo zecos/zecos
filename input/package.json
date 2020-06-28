@@ -4,7 +4,10 @@
   "description": "Input UI components for zecos",
   "author": "Zane Hitchcox",
   "license": "MIT",
-  "repository": "zecos/zecos",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zecos/zecos.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

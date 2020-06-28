@@ -4,7 +4,10 @@
   "description": "`@zecos/input` material-ui input pickersversion",
   "author": "zecos",
   "license": "MIT",
-  "repository": "zecos/input-picker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zecos/zecos.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
