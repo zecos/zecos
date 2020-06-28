@@ -8,6 +8,10 @@
     "type": "git",
     "url": "git+https://github.com/zecos/zecos.git"
   },
+  "bugs": {
+    "url": "https://github.com/zecos/zecos/issues"
+  },
+  "homepage": "https://zecos.io/input/overview",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

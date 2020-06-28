@@ -8,6 +8,10 @@
     "type": "git",
     "url": "git+https://github.com/zecos/zecos.git"
   },
+  "bugs": {
+    "url": "https://github.com/zecos/zecos/issues"
+  },
+  "homepage": "https://zecos.io/ui-libraries/input-basic",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -32,9 +36,7 @@
     "test:watch": "react-scripts-ts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepare": "yarn run build",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "prepublish": "rollup -c"
   },
   "dependencies": {
     "@zecos/field": "^0.0.0"

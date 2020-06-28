@@ -13,6 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/zecos/zecos.git"
   },
+  "bugs": {
+    "url": "https://github.com/zecos/zecos/issues"
+  },
+  "homepage": "https://zecos.io/validate",
   "keywords": [
     "validation",
     "validator",
@@ -25,10 +29,6 @@
   ],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zecos/validate/issues"
-  },
-  "homepage": "https://github.com/zecos/validate#readme",
   "dependencies": {
     "human-list": "^0.0.1"
   },

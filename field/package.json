@@ -10,14 +10,16 @@
   },
   "name": "@zecos/field",
   "description": "form fields state management",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "main": "dist/lib.js",
   "dependencies": {
     "@zecos/validatorz": "0.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc -w"
+    "start": "tsc -w",
+    "build": "tsc --build",
+    "prepublish": "tsc --build"
   },
   "repository": {
     "type": "git",
@@ -35,8 +37,8 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zecos/field/issues"
+    "url": "https://github.com/zecos/zecos/issues"
   },
-  "homepage": "https://github.com/zecos/field#readme",
+  "homepage": "https://zecos.io/field",
   "peerDependencies": {}
 }
