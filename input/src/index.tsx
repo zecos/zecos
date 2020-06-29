@@ -367,12 +367,14 @@ export const createLayout: LayoutCreatorCreator = LayoutCmpt => opts => {
   const log = (opts) => logFormData(result, opts)
   result["log" + helpers.upperCamel] = log
   result.log = log
-  result.get = (names: string | string[]) => {
+  const get = (names: string | string[]) => {
     if (typeof names === "string") return byName(result.items, names)
     else if (Array.isArray(names)) {
       return byNames(result.items, names)
     }
   }
+  result.get = get
+  result[name + "Get"] = get
   return result
 }
 

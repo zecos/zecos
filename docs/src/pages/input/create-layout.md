@@ -41,6 +41,11 @@ She would get an object with the following properties:
 * `Cmpt`: The layout component
 * `items`: The same items that were passed to you
 * `errors`: The same errors that were passed to you
+* `get`:
+  * convenience method that gets the value of the item by name
+  * E.g. `myform.get("firstName")` would simply return the value
+  * also can return an object if an array of names are returned
+  * E.g. `myform.get("firstName", "lastName")` might return `{firstName: "Zane", lastName: "Hitchcox"}`
 * `meta`:
   * just an object with the information that it is a layout
   * it looks like this `{$$__input_type: 'layout'}`
@@ -61,14 +66,10 @@ She would get an object with the following properties:
   * same thing as `items`
   * if the `name` were `myForm`, then `[name + "Items"]` would be `"myformItems"`
 * `[name + "Errors"]`: You get the picture
+* `[name + "Get"]`: ...
 * `[name + "Meta"]`: ...
 * `[name + "Helpers"]`: ....
 * `[UpperCamelName + "Display"]`: ...
 * `["log" + UpperCamelName]`: ...
-* `get`:
-  * convenience method that gets the value of the item by name
-  * E.g. `myform.get("firstName")` would simply return the value
-  * also can return an object if an array of names are returned
-  * E.g. `myform.get("firstName", "lastName")` might return `{firstName: "Zane", lastName: "Hitchcox"}`
 
 And that's it. I would put the example here again, but that wouldn't be DRY (don't repeat yourself). Feel free to scroll up though.
