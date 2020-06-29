@@ -19,7 +19,8 @@ foreach ($lib in $link_libs) {
 }
 cd ../app
 foreach ($lib in $link_libs) {
-   cd "../$lib";
+   cd ../docs;
+   cd ../app;
    yarn link "@zecos/$lib";
 }
 cd ..

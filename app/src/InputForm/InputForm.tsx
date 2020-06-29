@@ -1,6 +1,6 @@
 import React from "react"
 import { validateUsername, validateName, validateEmail } from "@zecos/validate"
-import { TextArea, Select, Text } from "@zecos/input-basic"
+import { TextArea, Select, Text, SimpleFormLayout, Button } from "@zecos/input-basic"
 import './InputForm.css'
  
 const fieldProperties = {
@@ -59,6 +59,23 @@ export const InputForm = () => {
     init: "blue",
     name: "favoriteColor",
   })
+  // const {SimpleForm, SimpleFormDisplay, logSimpleForm}  = SimpleFormLayout({
+  //   name: 'simpleForm',
+  //   items: [
+  //     Text({
+  //       validate: validateName,
+  //       name: "firstName"
+  //     }),
+  //     Text({
+  //       validate: validateName,
+  //       name: "lastName"
+  //     }),
+  //     Button
+  //   ],
+  //   props: {
+  //     className: "form"
+  //   }
+  // })
   return (
     <form className="form">
       {/* These are your inputs */}
@@ -71,6 +88,12 @@ export const InputForm = () => {
       Describe Yourself: {describeYourselfState.value}<br />
       Favorite Color: {favoriteColorState.value}
       <FirstNameDisplay />
+      <Button onClick={(e: any) => {
+          e.preventDefault()
+          console.log('hello')
+        }}
+        label="Click dawg"
+      />
     </form>
   )
 }

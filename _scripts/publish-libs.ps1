@@ -5,5 +5,5 @@
  foreach ($lib in $libs) {
    cd "../$lib";
    echo "publishing $lib"
-    npm version patch; npm publish;
+   npm version patch; npm publish;
  }

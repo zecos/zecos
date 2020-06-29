@@ -12,8 +12,8 @@ There are several Input UI components, although, there will be more added in the
 * [`Slider`](#slider)
 * [`Checkbox`](#checkbox)
 * [`Radio`](#radio)
+* [`Button`](#button)
 * [`GroupLayout`](#grouplayout)
-* [`SimpleLayout`](#simplelayout)
 * [`SimpleFormLayout`](#simpleformlayout)
 * [`Multi`](#multi)
 
@@ -75,6 +75,14 @@ example:0150_basic-checkbox
 
 ```tsx
 example:0160_basic-radio
+```
+
+### Button
+
+`Button` is a simple button included to provide UI consistency in your buttons:
+
+```tsx
+example:0165_basic-button
 ```
 
 ### GroupLayout
