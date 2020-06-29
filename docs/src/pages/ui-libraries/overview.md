@@ -4,10 +4,10 @@ I've gone ahead and created a few input UI libraries, but I hope people won't co
 
 Here are the libraries I've created:
 
-* [`@zecos/input-basic`](/input/input-basic)
+* [`@zecos/input-basic`](/ui-libraries/input-basic)
   * Created from scratch
   * Easiest to fork
-* [`@zecos/input-mui`](/input/input-mui)
+* [`@zecos/input-mui`](/ui-libraries/input-mui)
   * Based on [Material UI](https://material-ui.com)
   * Probably the most production-ready
 

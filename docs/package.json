@@ -81,5 +81,8 @@
       "/field",
       "/validate"
     ]
+  },
+  "resolutions": {
+    "react-dev-utils": "10.1.0"
   }
 }

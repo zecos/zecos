@@ -35,7 +35,6 @@ import { routes } from './routes';
     })
     return acc
   }, ([] as string[]))
-  console.log(JSON.stringify(routeLinks, null, 2))
 })()
 
 
@@ -180,7 +179,7 @@ const useStyles = makeStyles((theme: Theme) =>
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
       }),
-      marginLeft: 0,
+      margin: "0 auto",
       paddingBottom: theme.spacing(6),
     },
     contentShift: {
@@ -310,11 +309,18 @@ const renderRoute = ({cmpt, link}) => {
 
 
 const App = () => {
-  const [menuOpen, setMenuOpen] = useState(lsMenuOpen)
+  const [menuOpen, setMenuOpen] = useState(true)
   const toggleMenuOpen = () => {
     localStorage["menu-open"] = !menuOpen
     setMenuOpen(!menuOpen)
   }
+
+  useEffect(() => {
+    // have to refresh, because react snapshot will
+    // have the menu always open by default
+    if (lsMenuOpen === false)
+      setMenuOpen(false)
+  }, [])
   const scrollPositionName = `scrollposition.${location.href}`
   
   const classes = useStyles()
@@ -331,7 +337,6 @@ const App = () => {
     const maxLook = 100
     let curInc = 0
     if (savedPosition) {
-      console.log('found saved position')
       const scroll = () => {
         if (curInc++ > maxLook) return
         if (getBodyHeight() < savedPosition) {
@@ -350,7 +355,6 @@ const App = () => {
           if (document.querySelector(window.location.hash)) {
             scrollToId(window.location.hash)
           } else {
-            console.log('waiting')
             setTimeout(scroll, 100)
           }
         }
