@@ -10,7 +10,7 @@
   },
   "name": "@zecos/field",
   "description": "form fields state management",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "dist/lib.js",
   "dependencies": {
     "@zecos/validatorz": "0.0.1"

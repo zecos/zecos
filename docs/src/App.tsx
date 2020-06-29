@@ -127,6 +127,7 @@ const getMd = (file: string) => () => {
 }
 
 const drawerWidth = 240
+const contentWidth = 1200
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -179,15 +180,18 @@ const useStyles = makeStyles((theme: Theme) =>
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
       }),
-      margin: "0 auto",
+      marginLeft: window.innerWidth > 600 ? (window.innerWidth - contentWidth) / 2 : 0, // 1200 = content width
       paddingBottom: theme.spacing(6),
+      maxWidth: 1200,
+      minWidth: window.innerWidth < 600 ? "100%" : 400,
+      boxSizing: "border-box",
     },
     contentShift: {
       transition: theme.transitions.create('margin', {
         easing: theme.transitions.easing.easeOut,
         duration: theme.transitions.duration.enteringScreen,
       }),
-      marginLeft: drawerWidth,
+      marginLeft: window.innerWidth > 600 ? drawerWidth + (window.innerWidth - drawerWidth - contentWidth ) / 2 - 24 : 0,
     },
     chevron: {
       color: "#D8DEE9"
