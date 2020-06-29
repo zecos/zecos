@@ -59,7 +59,7 @@ export const InputForm = () => {
     init: "blue",
     name: "favoriteColor",
   })
-  const {SimpleForm, SimpleFormDisplay, logSimpleForm}  = SimpleFormLayout({
+  const {SimpleForm, SimpleFormDisplay, logSimpleForm, ...simpleForm}  = SimpleFormLayout({
     name: 'simpleForm',
     items: [
       Text({
@@ -78,6 +78,10 @@ export const InputForm = () => {
       className: "form"
     }
   })
+
+  console.log("firstName", simpleForm.get("firstName"))
+
+
   return (
     <>
     <form className="form">
@@ -91,7 +95,8 @@ export const InputForm = () => {
       Describe Yourself: {describeYourselfState.value}<br />
       Favorite Color: {favoriteColorState.value}
       <FirstNameDisplay />
-      <Button onClick={() => console.log('hello')}
+      <Button
+      onClick={() => console.log('hello')}
         label="Click dawg"
       />
     </form>

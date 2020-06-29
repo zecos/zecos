@@ -29,6 +29,9 @@ example:0040_create-layout
   * `title`: the form name in `Title Case`
   * `snake`: the form name in `snake_case`
   * `kebab`: the form name in `kebab-case`
+* `get`:
+  * convenience method that gets the value of the item by name
+  * E.g. `myform.get("firstName")` would simply return the value
   
 Then, you can do whatever you want with those things and make them look pretty for the consumer. This is meant so the user doesn't have to add a bunch of layout boiler plate while creating forms. It doesn't have to be really complicated.
 
