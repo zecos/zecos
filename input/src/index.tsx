@@ -367,7 +367,12 @@ export const createLayout: LayoutCreatorCreator = LayoutCmpt => opts => {
   const log = (opts) => logFormData(result, opts)
   result["log" + helpers.upperCamel] = log
   result.log = log
-  result.get = (name: string) => byName(result.items, name)
+  result.get = (names: string | string[]) => {
+    if (typeof names === "string") return byName(result.items, names)
+    else if (Array.isArray(names)) {
+      return byNames(result.items, names)
+    }
+  }
   return result
 }
 
@@ -377,6 +382,17 @@ const byName = (items: any[], name: string): any => {
       return item.state.value
     }
   }
+}
+
+const byNames = (items: any[], names: string[]): any => {
+  const result = {}
+  for (const item of items) {
+    for (const name of names)
+    if (typeof item === "object" && item.name === name) {
+      result[name] = item.state.value
+    }
+  }
+  return result
 }
 
 interface ICreateMultiOpts {

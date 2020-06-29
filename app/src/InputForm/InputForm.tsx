@@ -79,8 +79,6 @@ export const InputForm = () => {
     }
   })
 
-  console.log("firstName", simpleForm.get("firstName"))
-
 
   return (
     <>

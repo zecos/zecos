@@ -29,9 +29,6 @@ example:0040_create-layout
   * `title`: the form name in `Title Case`
   * `snake`: the form name in `snake_case`
   * `kebab`: the form name in `kebab-case`
-* `get`:
-  * convenience method that gets the value of the item by name
-  * E.g. `myform.get("firstName")` would simply return the value
   
 Then, you can do whatever you want with those things and make them look pretty for the consumer. This is meant so the user doesn't have to add a bunch of layout boiler plate while creating forms. It doesn't have to be really complicated.
 
@@ -68,5 +65,10 @@ She would get an object with the following properties:
 * `[name + "Helpers"]`: ....
 * `[UpperCamelName + "Display"]`: ...
 * `["log" + UpperCamelName]`: ...
+* `get`:
+  * convenience method that gets the value of the item by name
+  * E.g. `myform.get("firstName")` would simply return the value
+  * also can return an object if an array of names are returned
+  * E.g. `myform.get("firstName", "lastName")` might return `{firstName: "Zane", lastName: "Hitchcox"}`
 
 And that's it. I would put the example here again, but that wouldn't be DRY (don't repeat yourself). Feel free to scroll up though.

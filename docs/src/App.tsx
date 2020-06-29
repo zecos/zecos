@@ -413,6 +413,16 @@ const App = () => {
         </div>
       <List>
         {routes.map(renderSection)}
+        <!-- Place this tag where you want the button to render. -->
+      <a
+        className="github-button"
+        href="https://github.com/ntkme/github-buttons"
+        data-color-scheme="no-preference: light; light: light; dark: dark;"
+        data-icon="octicon-star"
+        aria-label="Star ntkme/github-buttons on GitHub"
+      >
+        Star
+      </a>
       </List>
       </Drawer>
       <div className={classes.drawerHeader} />
