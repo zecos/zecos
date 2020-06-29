@@ -316,7 +316,7 @@ const getLayout = ({LayoutCmpt, validate, name, items, initialProps, opts}) => {
   }
 }
 
-export const createLayout:LayoutCreatorCreator = LayoutCmpt => opts => {
+export const createLayout: LayoutCreatorCreator = LayoutCmpt => opts => {
   const { name } = opts
   if (typeof name === "undefined") {
     throw new Error("You must provide a camelcased name for the layout.")

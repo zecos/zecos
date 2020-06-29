@@ -59,24 +59,27 @@ export const InputForm = () => {
     init: "blue",
     name: "favoriteColor",
   })
-  // const {SimpleForm, SimpleFormDisplay, logSimpleForm}  = SimpleFormLayout({
-  //   name: 'simpleForm',
-  //   items: [
-  //     Text({
-  //       validate: validateName,
-  //       name: "firstName"
-  //     }),
-  //     Text({
-  //       validate: validateName,
-  //       name: "lastName"
-  //     }),
-  //     Button
-  //   ],
-  //   props: {
-  //     className: "form"
-  //   }
-  // })
+  const {SimpleForm, SimpleFormDisplay, logSimpleForm}  = SimpleFormLayout({
+    name: 'simpleForm',
+    items: [
+      Text({
+        validate: validateName,
+        name: "firstName"
+      }),
+      Text({
+        validate: validateName,
+        name: "lastName"
+      }),
+      <Button onClick={() => console.log('hello')}
+        label="Click dawg"
+      />
+    ],
+    props: {
+      className: "form"
+    }
+  })
   return (
+    <>
     <form className="form">
       {/* These are your inputs */}
       <FirstName />
@@ -88,13 +91,12 @@ export const InputForm = () => {
       Describe Yourself: {describeYourselfState.value}<br />
       Favorite Color: {favoriteColorState.value}
       <FirstNameDisplay />
-      <Button onClick={(e: any) => {
-          e.preventDefault()
-          console.log('hello')
-        }}
+      <Button onClick={() => console.log('hello')}
         label="Click dawg"
       />
     </form>
+    <SimpleForm />
+    </>
   )
 }
 

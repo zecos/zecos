@@ -24,13 +24,20 @@ interface ReactFieldSingleActions {
 
 export const Button = props => {
     const {label, onClick, ...otherProps} = props
+    const _onClick = (e, ...args) => {
+      e.preventDefault()
+      if (typeof props.onClick !== "undefined") {
+        props.onClick(e, ...args)
+      }
+    }
+    
 
     return (
         <div className={groupStyles.groupContainer}>
         <div className={groupStyles.formGroup}>
             <button
                 className={styles.button}
-                onClick={props.onClick}
+                onClick={_onClick}
                 name={name}
                 aria-label={props.label || ""}
                 {...otherProps}

@@ -8,7 +8,11 @@ export const SimpleFormLayout = createLayout(({props, items, helpers}) => {
     <form {...props}>
       <h3 className={styles.heading}>{helpers.title}</h3>
       {items.map((Input, i) => (
-        <span key={i}><Input.Cmpt key={i} /></span>
+        // if it is a @zecos/input component, add the component, otherwise
+        // leave as is
+        typeof Input.Cmpt !== "undefined" ?
+          <span key={i}><Input.Cmpt key={i} /></span> :
+          <span key={i}>{Input}</span>
       ))}
     </form>
   )

@@ -30,7 +30,8 @@ export const MultiForm = () => {
     ],
     name: "firstNames",
   })
-  const addFirst = () => {
+  const addFirst = (e:any) => {
+    e.preventDefault()
     actions.push(newSimple)
   }
   
