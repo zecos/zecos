@@ -12,7 +12,7 @@ You can get started with nearly zero-setup and should be able to create an input
 example:0000_overview
 ```
 
-That is an overly simplified example without any data validation, but you see how simple creating an input can be.
+That is an overly simplified example, but you see how simple creating an input can be.
 
 But this along with other features of the `@zecos/input` family can be composed to build powerful UI tools.
 
