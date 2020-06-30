@@ -20,6 +20,7 @@ import {
   Switch,
   Link,
   useLocation,
+  useHistory,
 } from "react-router-dom"
 import clsx from 'clsx'
 import { CodeBlock } from './CodeBlock/CodeBlock';
@@ -322,6 +323,37 @@ const App = () => {
     sessionStorage["menu-open"] = !menuOpen
     setMenuOpen(!menuOpen)
   }
+  const history = useHistory()
+
+  useEffect(() => {
+
+    const goNext = () => {
+      history.push(pageToNextMap[window.location.pathname])
+    }
+
+    const goPrev = () => {
+      history.push(pageToPrevMap[window.location.pathname])
+    }
+    const handleKeyPress = (e) => {
+      const active = (document as any).activeElement
+      if (
+          !["input", "textarea"].includes(active.tagName.toLowerCase())
+          && !e.metaKey
+          && !e.shiftKey
+          && !e.ctrlKey) {
+        e.preventDefault()
+        if (e.key === "ArrowRight")
+            goNext()
+
+        if (e.key === "ArrowLeft")
+            goPrev()
+      }
+    }
+    window.addEventListener("keyup", handleKeyPress)
+    return () => {
+      window.removeEventListener("keyup", handleKeyPress)
+    }
+  }, [])
 
   useEffect(() => {
     // have to refresh, because react snapshot will
@@ -329,7 +361,7 @@ const App = () => {
     if (lsMenuOpen === false)
       setMenuOpen(false)
   }, [])
-  const scrollPositionName = `scrollposition.${location.href}`
+  const scrollPositionName = `scrollposition.${window.location.href}`
   
   const classes = useStyles()
   const listener = _ => {
