@@ -4,7 +4,7 @@
 
 This library has peer dependencies of 
 
-* [`@material-ui/core`](https://material-ui)
+* [`@material-ui/core`](https://material-ui.com)
 * [`@date-io/date-fns`](https://www.npmjs.com/package/@date-io/date-fns)
 * [`@zecos/input`](/input/overview)
 

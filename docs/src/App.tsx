@@ -24,9 +24,9 @@ import {
 import clsx from 'clsx'
 import { CodeBlock } from './CodeBlock/CodeBlock';
 import { routes } from './routes';
+import { useTracking } from './useTracking';
 
-
-;(() => {
+(() => {
   // show the route links for the react-snapshot
   // should probably move md files to public.
   const routeLinks = routes.reduce((acc, cur) => {
@@ -313,6 +313,10 @@ const renderRoute = ({cmpt, link}) => {
 
 
 const App = () => {
+  if (process.env.NODE_ENV === "production") {
+    useTracking("UA-171255983-1")
+  }
+
   const [menuOpen, setMenuOpen] = useState(true)
   const toggleMenuOpen = () => {
     localStorage["menu-open"] = !menuOpen
@@ -413,16 +417,21 @@ const App = () => {
         </div>
       <List>
         {routes.map(renderSection)}
-        <!-- Place this tag where you want the button to render. -->
-      <a
-        className="github-button"
-        href="https://github.com/ntkme/github-buttons"
-        data-color-scheme="no-preference: light; light: light; dark: dark;"
-        data-icon="octicon-star"
-        aria-label="Star ntkme/github-buttons on GitHub"
-      >
-        Star
-      </a>
+          <a href="https://github.com/zecos/zecos" target="_blank"> 
+            <ListItem>
+                <img
+                  src="/github-logo-light.png"
+                  alt="github source code"
+                  style={{
+                    width: 24,
+                    height: "auto",
+                    padding: 6,
+                    marginRight: 4,
+                  }}
+                />
+                Star/View Source
+            </ListItem>
+          </a>
       </List>
       </Drawer>
       <div className={classes.drawerHeader} />

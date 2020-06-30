@@ -4,13 +4,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {
-  Switch,
-  Route,
   BrowserRouter,
 } from "react-router-dom"
 import { ThemeProvider } from '@material-ui/core';
 import { theme } from './theme';
-import { getRouteLinks } from './routes';
 
 
 render((
