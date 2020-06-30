@@ -367,10 +367,23 @@ export const createLayout: LayoutCreatorCreator = LayoutCmpt => opts => {
   const log = (opts) => logFormData(result, opts)
   result["log" + helpers.upperCamel] = log
   result.log = log
-  const get = (names: string | string[]) => {
-    if (typeof names === "string") return byName(result.items, names)
-    else if (Array.isArray(names)) {
-      return byNames(result.items, names)
+
+  const hasItemErrors = () => {
+    const itemErrors = getErrors(items)
+    for (const name in itemErrors) {
+      if (itemErrors[name].length > 0) {
+        return true
+      }
+    }
+    return false
+  }
+  result.hasItemErrors = hasItemErrors
+  result[name + "HasItemErrors"] = hasItemErrors
+
+  const get = (names: string | string[], ...more: string[]) => {
+    if (Array.isArray(names) || more.length > 0) return byNames(items, more.concat(names))
+    else if (typeof names === "string") {
+      return byName(items, names)
     }
   }
   result.get = get
@@ -378,10 +391,20 @@ export const createLayout: LayoutCreatorCreator = LayoutCmpt => opts => {
   return result
 }
 
+const getErrors = (items: any[]): any => {
+  const result = {}
+  for (const item of items) {
+    if (getDisplayType(item) === "input") {
+      result[item.name] = item.actions.getState().errors
+    }
+  }
+  return result
+}
+
 const byName = (items: any[], name: string): any => {
   for (const item of items) {
-    if (typeof item === "object" && item.name === name) {
-      return item.state.value
+    if (getDisplayType(item) === "input" && name === item.name) {
+      return item.actions.getState().value
     }
   }
 }
@@ -390,9 +413,9 @@ const byNames = (items: any[], names: string[]): any => {
   const result = {}
   for (const item of items) {
     for (const name of names)
-    if (typeof item === "object" && item.name === name) {
-      result[name] = item.state.value
-    }
+      if (getDisplayType(item) === "input" && name === item.name) {
+        result[name] = item.actions.getState().value
+      }
   }
   return result
 }

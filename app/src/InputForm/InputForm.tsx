@@ -46,6 +46,11 @@ const colors = {
 
 
 export const InputForm = () => {
+  const signup = () => {
+      console.log("getting")
+      console.log(simpleFormGet(["firstName", "lastName"]))
+      console.log("hasItemErrors", simpleForm.hasItemErrors())
+  }
   const {firstName, FirstName, firstNameState, FirstNameDisplay} = Text({
     validate: validateName,
     name: "firstName"
@@ -59,7 +64,7 @@ export const InputForm = () => {
     init: "blue",
     name: "favoriteColor",
   })
-  const {SimpleForm, SimpleFormDisplay, logSimpleForm, ...simpleForm}  = SimpleFormLayout({
+  const {SimpleForm, SimpleFormDisplay, logSimpleForm, simpleFormGet, ...simpleForm}  = SimpleFormLayout({
     name: 'simpleForm',
     items: [
       Text({
@@ -70,14 +75,13 @@ export const InputForm = () => {
         validate: validateName,
         name: "lastName"
       }),
-      <Button onClick={() => console.log('hello')}
-        label="Click dawg"
-      />
+      <Button onClick={signup} label="Click dawg" />
     ],
     props: {
       className: "form"
     }
   })
+  console.log(simpleForm.get("firstName", "lastName"))
 
 
   return (

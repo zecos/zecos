@@ -3,16 +3,6 @@ import styles from "./Button.css"
 import groupStyles from "./group.css"
 // import { ReactFieldSingleActions } from "@zecos/input"
 import { IFieldSingleState } from '@zecos/field'
-import { createInput } from "@zecos/input";
-
-
-const renderOption = ([label, value]) => {
-  return (
-    <option key={value} value={value}>
-      {label}
-    </option>
-  )
-}
 
 interface ReactFieldSingleActions {
   setValue: (newVal) => any
