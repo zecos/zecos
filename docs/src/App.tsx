@@ -231,9 +231,9 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 )
 let lsMenuOpen = true
-if (typeof localStorage !== "undefined"
-  && typeof localStorage["menu-open"] !== "undefined") {
-    lsMenuOpen = JSON.parse(localStorage["menu-open"])
+if (typeof sessionStorage !== "undefined"
+  && typeof sessionStorage["menu-open"] !== "undefined") {
+    lsMenuOpen = JSON.parse(sessionStorage["menu-open"])
 }
 
 const renderMenuLink = ({title, link, code}) => {
@@ -319,7 +319,7 @@ const App = () => {
 
   const [menuOpen, setMenuOpen] = useState(true)
   const toggleMenuOpen = () => {
-    localStorage["menu-open"] = !menuOpen
+    sessionStorage["menu-open"] = !menuOpen
     setMenuOpen(!menuOpen)
   }
 
@@ -334,14 +334,14 @@ const App = () => {
   const classes = useStyles()
   const listener = _ => {
     const bodyOffset = document.body.getBoundingClientRect().y
-    if (typeof localStorage !== "undefined") {
-      localStorage[scrollPositionName] = -bodyOffset
+    if (typeof sessionStorage !== "undefined") {
+      sessionStorage[scrollPositionName] = -bodyOffset
     }
   }
   
   useEffect(() => {
     window.addEventListener("scroll", listener)
-    const savedPosition = localStorage[scrollPositionName]
+    const savedPosition = sessionStorage[scrollPositionName]
     const maxLook = 100
     let curInc = 0
     if (savedPosition) {
