@@ -46,6 +46,9 @@ She would get an object with the following properties:
   * E.g. `myform.get("firstName")` would simply return the value
   * also can return an object if an array of names are returned
   * E.g. `myform.get("firstName", "lastName")` might return `{firstName: "Zane", lastName: "Hitchcox"}`
+* `hasItemErrors`:
+  * convenience function that checks if any of the items one level deep have any errors
+  * useful for simple forms
 * `meta`:
   * just an object with the information that it is a layout
   * it looks like this `{$$__input_type: 'layout'}`
