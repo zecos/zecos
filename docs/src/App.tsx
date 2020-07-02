@@ -181,7 +181,7 @@ const useStyles = makeStyles((theme: Theme) =>
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
       }),
-      marginLeft: window.innerWidth > 600 ? (window.innerWidth - contentWidth) / 2 : 0, // 1200 = content width
+      margin: "0 auto",
       paddingBottom: theme.spacing(6),
       maxWidth: 1200,
       minWidth: window.innerWidth < 600 ? "100%" : 400,
@@ -192,7 +192,7 @@ const useStyles = makeStyles((theme: Theme) =>
         easing: theme.transitions.easing.easeOut,
         duration: theme.transitions.duration.enteringScreen,
       }),
-      marginLeft: window.innerWidth > 600 ? drawerWidth + (window.innerWidth - drawerWidth - contentWidth ) / 2 - 24 : 0,
+      marginLeft: drawerWidth + (window.innerWidth - drawerWidth - contentWidth ) / 2 - 24,
     },
     chevron: {
       color: "#D8DEE9"
