@@ -10,6 +10,7 @@ import inputOverviewPage from './pages/input/overview.md'
 import uiOverviewPage from './pages/ui-libraries/overview.md'
 import uiGeneralPage from './pages/ui-libraries/general.md'
 import validatePage from './pages/general/validate.md'
+import utilPage from './pages/general/util.md'
 
 export const routes = [{
     name: "",
@@ -68,6 +69,10 @@ export const routes = [{
   }, {
   name: "General",
   children: [{
+    title: "@zecos/util",
+    link: "/util",
+    cmpt: utilPage,
+  },{
     title: "@zecos/field",
     link: "/field",
     cmpt: fieldPage,

@@ -97,12 +97,11 @@ example:0170_basic-group-layout
 
 ### SimpleForm
 
-`SimpleForm` is another layout, only instead of just grouping inputs together, it actually creates a form with the inputs. Let's combine all the previous examples into one form, and we can begin to glimpse the power of `@zecos/input`.
+`SimpleForm` is a quick way to make a form built with `@zecos/input`.
 
-TODO: add example
-<!-- ```tsx
-example:0180_basic-simple-form-layout
-``` -->
+```tsx
+example:0180_basic-simple-form
+```
 
 ### Multi
 

@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { createLayout } from '@zecos/input'
 import styles from './SimpleForm.css'
 import { Button } from './Button'
 import { camelToTitle, camelToUpperCamel, hasItemErrors, getValues } from '@zecos/util'
@@ -38,13 +37,17 @@ interface IGenericObject {
   [key: string]: string
 }
 
-
 interface IActionCallbackArgs {
   items: any,
   values: (name?: string, ...names: string[]) => IGenericObject
 }
 
-export const SimpleForm = opts => {
+interface IOptions {
+  [key: string]: any,
+  action?: (IActionCallbackArgs) => any
+}
+
+export const SimpleForm = (opts: IOptions) => {
   const name = opts.name
   const title = camelToTitle(name)
   const upperCamel:string  = camelToUpperCamel(name)
@@ -76,7 +79,7 @@ export const SimpleForm = opts => {
       items: opts.items,
       values,
     }
-    const result = opts.action(actionCallbackArgs)
+    const result = (opts.action as any)(actionCallbackArgs)
     if (isPromise(result)) {
       setIsLoading(true)
       if (opts.catchServerErrors !== false) {
@@ -114,8 +117,6 @@ export const SimpleForm = opts => {
   return {
     Cmpt,
     [upperCamel]: Cmpt,
-    items: opts.items,
-    [`${name}Items`]: opts.items,
     handleErrors,
     [`${name}HandleErrors`]: handleErrors,
   }
