@@ -28,7 +28,7 @@ export const getValues = function (items: any[], names: string | string[], ...mo
   if (Array.isArray(names) || more.length > 0) return byNames(items, more.concat(names))
   else if (typeof names === "string") {
     return byName(items, names)
-  } else if (arguments.length === 0) {
+  } else if (arguments.length === 1) {
     return getAllValues(items)
   }
 }
@@ -66,7 +66,7 @@ const byNames = (items: any[], names: string[]): any => {
 const getAllValues = (items: any[]) => {
   const result = {}
   for (const item of items) {
-      if (getItemType(item) === "input" && name === item.name) {
+      if (getItemType(item) === "input") {
         result[item.name] = item.actions.getState().value
       }
   }

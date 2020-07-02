@@ -14,6 +14,8 @@ const renderErrors = (err) => {
   }
 }
 
+// TODO: move to util and merge with validation error processing
+// also should give example for custom error validation
 const processError = (err) => {
   if (typeof err === "string") {
     try {
@@ -46,6 +48,7 @@ export const SimpleForm = opts => {
   const name = opts.name
   const title = camelToTitle(name)
   const upperCamel:string  = camelToUpperCamel(name)
+  
   const [attemptedWithErrors, setAttemptedWithErrors] = React.useState(false)
   const [serverErrors, setServerErrors] = React.useState([] as any[])
   const handleErrors = resp => {
@@ -86,11 +89,10 @@ export const SimpleForm = opts => {
     }
   } : undefined
   const [isLoading, setIsLoading] = React.useState(false)
-  const Cmpt =  () => {
-    return (
+
+  const Cmpt = (
     <form onSubmit={handleSubmit}>
       <h3 className={styles.heading}>{title}</h3>
-      {isLoading ? opts.loadingText || "Loading..." : ""}
       {(opts.errors && opts.errors.length) ? renderErrors(opts.errors) : ""}
       {serverErrors.length ? renderErrors(serverErrors) : ""}
       {attemptedWithErrors ? <div className={styles.red}>Please fix errors to continue.</div> : ""}
@@ -101,9 +103,14 @@ export const SimpleForm = opts => {
           <span key={i}><Input.Cmpt key={i} /></span> :
           <span key={i}>{Input}</span>
       ))}
-      <Button onClick={handleSubmit}>{opts.submitButtonText || title}</Button>
+      <Button
+        disabled={isLoading}
+        onClick={handleSubmit}
+      >
+      {isLoading ? opts.loadingText || "Loading..." : opts.submitButtonText || title}
+      </Button>
     </form>
-  )}
+  )
   return {
     Cmpt,
     [upperCamel]: Cmpt,
