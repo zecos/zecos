@@ -14,7 +14,7 @@ There are several Input UI components, although, there will be more added in the
 * [`Radio`](#radio)
 * [`Button`](#button)
 * [`GroupLayout`](#grouplayout)
-* [`SimpleFormLayout`](#simpleformlayout)
+* [`SimpleForm`](#simpleform)
 * [`Multi`](#multi)
 
 ### Installation
@@ -95,13 +95,14 @@ In addition, you can run error-checking on the group as a whole rather than just
 example:0170_basic-group-layout
 ```
 
-### SimpleFormLayout
+### SimpleForm
 
-`SimpleFormLayout` is another layout, only instead of just grouping inputs together, it actually creates a form with the inputs. Let's combine all the previous examples into one form, and we can begin to glimpse the power of `@zecos/input`.
+`SimpleForm` is another layout, only instead of just grouping inputs together, it actually creates a form with the inputs. Let's combine all the previous examples into one form, and we can begin to glimpse the power of `@zecos/input`.
 
-```tsx
+TODO: add example
+<!-- ```tsx
 example:0180_basic-simple-form-layout
-```
+``` -->
 
 ### Multi
 

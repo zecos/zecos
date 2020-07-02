@@ -428,7 +428,7 @@ const App = () => {
           </IconButton>
           <Link to="/">
             <Typography variant="h6" noWrap>
-              <span className={classes.white}>@zecos</span>
+              <span className={classes.white}>@zecos (beta)</span>
             </Typography>
           </Link>
         </Toolbar>
