@@ -67,7 +67,7 @@ const getAllValues = (items: any[]) => {
   const result = {}
   for (const item of items) {
       if (getItemType(item) === "input") {
-        result[item.name] = item.actions.getState().value
+        result[item.helpers.name] = item.actions.getState().value
       }
   }
   return result
