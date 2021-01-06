@@ -9,7 +9,7 @@ export const camelToTitle = camelCase => camelCase
 export const titleToKebab = title => title
   .replace(/ ([A-Z])/g, match => `-${match.trim()}`)
   .toLowerCase()
-  
+
 export const kebabToSnake = (kebab: string) => kebab.replace("-", "_")
 
 export const camelToUpperCamel = (name: string) => name.charAt(0).toUpperCase() + name.slice(1)
@@ -67,7 +67,7 @@ const getAllValues = (items: any[]) => {
   const result = {}
   for (const item of items) {
       if (getItemType(item) === "input") {
-        result[item.helpers.name] = item.actions.getState().value
+        result[item.helpers.snake] = item.actions.getState().value
       }
   }
   return result
@@ -144,8 +144,8 @@ const getItemType = (item) => {
 //       {items.map((item, i) => <div key={i}>{displayFormData(item, opts, level + 1)}</div>)}
 //     </div>
 //   )
-    
-  
+
+
 // }
 // export const displayFormData:any = (item, opts = {className: ""}, level=0) => {
 //   const type = getDisplayType(item)
