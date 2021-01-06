@@ -28,7 +28,7 @@ export const Text = createInput(({helpers, state, props}) => {
 
     // use password type automatically if the name contains the word "password" just as a convenience
     const type = props.type || passwordRegExp.test(name) ? "password" : "text"
-    
+
     const {touched, errors, value} = state
     return (
       <div className={groupStyles.groupContainer}>
@@ -46,6 +46,7 @@ export const Text = createInput(({helpers, state, props}) => {
             onBlur={handleBlur}
             id={id}
             type={type}
+            spellCheck={props.spellCheck}
           />
         </div>
       </div>
