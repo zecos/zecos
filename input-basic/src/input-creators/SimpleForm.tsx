@@ -51,6 +51,7 @@ export const SimpleForm = (opts: IOptions) => {
   const name = opts.name
   const title = camelToTitle(name)
   const upperCamel:string  = camelToUpperCamel(name)
+  const props = opts.props || {}
 
   const [attemptedWithErrors, setAttemptedWithErrors] = React.useState(false)
   const [serverErrors, setServerErrors] = React.useState([] as any[])
@@ -74,7 +75,7 @@ export const SimpleForm = (opts: IOptions) => {
       return
     }
     setAttemptedWithErrors(false)
-    const values = (...args) => getValues(opts.items, ...args).replace('-', '_')
+    const values = (...args) => getValues(opts.items, ...args)
     const actionCallbackArgs: IActionCallbackArgs = {
       items: opts.items,
       values,
@@ -94,7 +95,7 @@ export const SimpleForm = (opts: IOptions) => {
   const [isLoading, setIsLoading] = React.useState(false)
 
   const Cmpt = (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} {...props}>
       <h3 className={styles.heading}>{title}</h3>
       {(opts.errors && opts.errors.length) ? renderErrors(opts.errors) : ""}
       {serverErrors.length ? renderErrors(serverErrors) : ""}

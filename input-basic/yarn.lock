@@ -800,6 +800,21 @@
   dependencies:
     "@zecos/validatorz" "0.0.1"
 
+"@zecos/fieldz@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@zecos/fieldz/-/fieldz-0.0.8.tgz#ee2bd2c06b505b671767048e84e15b07e292f4a5"
+  integrity sha512-xSs5KfTqlHPLybYmPCsoMXP2YGIsM8GajeznRnKIwHdLbqZGle5AMocJHIbC4Rwag8By4Jg4czwqKDIgoa4HnQ==
+  dependencies:
+    "@zecos/validatorz" "0.0.1"
+
+"@zecos/util@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@zecos/util/-/util-0.0.1.tgz#6d42f6da3a3d0eb30a8e57d7bb8329e1241626d8"
+  integrity sha512-op6yn3btBv6FftlUY0NgZ7Nmi2G85M/8RLAt2JjzN6kTBRHjIpAyynJcOMZpKhxVsOpFDQ/kF6Fx1qvxNdVg1w==
+  dependencies:
+    "@zecos/field" "^0.0.0"
+    "@zecos/fieldz" "^0.0.8"
+
 "@zecos/validatorz@0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@zecos/validatorz/-/validatorz-0.0.1.tgz#ee670d6748a085c8965a692ee8fcf2e3894a24c3"
@@ -7875,15 +7890,6 @@ react-scripts-ts@^2.16.0:
     whatwg-fetch "2.0.3"
   optionalDependencies:
     fsevents "^1.1.3"
-
-react@^16.4.1:
-  version "16.12.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
-  integrity sha512-fglqy3k5E+81pA8s+7K0/T3DBCF0ZDOher1elBFzF7O6arXJgzyu/FW+COxFvAWXJoJN9KIZbT2LXlukwphYTA==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
