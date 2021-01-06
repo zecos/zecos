@@ -1,6 +1,6 @@
 {
   "name": "@zecos/input-basic",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "`@zecos/inputs` is a library for quickly creating form fields for rapid prototyping.",
   "author": "zecos",
   "license": "MIT",
