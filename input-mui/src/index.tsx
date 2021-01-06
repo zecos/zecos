@@ -41,7 +41,7 @@ export const TextInput = createInput(({helpers, props, state}) => {
     label,
     id,
   } = helpers
-  
+
   const { value } = state
 
   return (
@@ -69,9 +69,9 @@ export const SelectInput = createInput(({helpers, props, state}) => {
     label,
     id,
   } = helpers
-  
+
   const { options, ...moreProps } = props
-  
+
   const { value } = state
 
   return <FormControl fullWidth margin="normal">
@@ -106,7 +106,7 @@ export const RadioInput = createInput(({helpers, props, state}) => {
     title,
   } = helpers
   const { value } = state
-  
+
   const { options, radioProps, ...radioGroupProps } = props
 
   return (
@@ -221,7 +221,7 @@ export const GroupLayout = createLayout(({props, items, errors, helpers}) => {
       const {Cmpt, helpers} = input
       return <Cmpt key={helpers.name} />
     })
-  
+
   return (
     <div>
       <FormControl component="fieldset" error={!!errors.length}>

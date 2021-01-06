@@ -1,8 +1,8 @@
 import React from "react"
 import { validateUsername, validateName, validateEmail } from "@zecos/validate"
-import { TextArea, Select, Text, SimpleFormLayout, Button } from "@zecos/input-basic"
+import { TextArea, Select, Text, SimpleForm, Button } from "@zecos/input-basic"
 import './InputForm.css'
- 
+
 const fieldProperties = {
   firstNameOfTheApplicantForThisForm: {
     init: "",
@@ -48,8 +48,9 @@ const colors = {
 export const InputForm = () => {
   const signup = () => {
       console.log("getting")
-      console.log(simpleFormGet(["firstName", "lastName"]))
-      console.log("hasItemErrors", simpleForm.hasItemErrors())
+      console.log(Object.keys(simpleForm))
+      // console.log((simpleFormGet as any)(["firstName", "lastName"]))
+      // console.log("hasItemErrors", (simpleForm as any).hasItemErrors())
   }
   const {firstName, FirstName, firstNameState, FirstNameDisplay} = Text({
     validate: validateName,
@@ -59,52 +60,71 @@ export const InputForm = () => {
   const {DescribeYourself, describeYourselfState} = TextArea({
     name: "describeYourself"
   })
-  
+
   const {FavoriteColor, favoriteColorState} = Select({
     init: "blue",
     name: "favoriteColor",
   })
-  const {SimpleForm, SimpleFormDisplay, logSimpleForm, simpleFormGet, ...simpleForm}  = SimpleFormLayout({
-    name: 'simpleForm',
+  const {SimpleFormExample, SimpleFormDisplay, logSimpleForm, simpleFormGet, setValues, ...simpleForm}  = SimpleForm({
+    name: 'simpleFormExample',
     items: [
       Text({
         validate: validateName,
-        name: "firstName"
+        name: "firstName",
+        props: {
+          spellCheck: false,
+        }
       }),
       Text({
         validate: validateName,
         name: "lastName"
       }),
-      <Button onClick={signup} label="Click dawg" />
     ],
     props: {
       className: "form"
+    },
+    loadingText: 'Loading...',
+    submitButtonText: 'submit',
+    action: ({values}) => {
+      try {
+        console.log(values())
+      } catch (err) {
+        console.log(err)
+      }
     }
   })
-  console.log(simpleForm.get("firstName", "lastName"))
 
+  const setVals = () => {
+    setValues({
+      last_name: 'Hitchcox',
+    })
+  }
 
   return (
     <>
-    <form className="form">
-      {/* These are your inputs */}
-      <FirstName />
-      <DescribeYourself />
-      <FavoriteColor options={colors}/>
-
-      {/* display the data */}
-      First Name State: {firstNameState.value}<br />
-      Describe Yourself: {describeYourselfState.value}<br />
-      Favorite Color: {favoriteColorState.value}
-      <FirstNameDisplay />
-      <Button
-      onClick={() => console.log('hello')}
-        label="Click dawg"
-      />
-    </form>
-    <SimpleForm />
+    {/* <FirstName /> */}
+    {SimpleFormExample}
+    <button onClick={setVals}>
+      test set values
+    </button>
     </>
   )
 }
 
- 
+
+    // <form className="form">
+    //   {/* These are your inputs */}
+    //   <FirstName />
+    //   <DescribeYourself />
+    //   <FavoriteColor options={colors}/>
+
+    //   {/* display the data */}
+    //   First Name State: {firstNameState.value}<br />
+    //   Describe Yourself: {describeYourselfState.value}<br />
+    //   Favorite Color: {favoriteColorState.value}
+    //   <FirstNameDisplay />
+    //   <Button
+    //   onClick={() => console.log('hello')}
+    //     label="Click dawg"
+    //   />
+    // </form>
