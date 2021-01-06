@@ -93,6 +93,20 @@ export const SimpleForm = (opts: IOptions) => {
     }
   } : undefined
   const [isLoading, setIsLoading] = React.useState(false)
+  const setValues = newVals => {
+    for (const key in newVals) {
+      const items = opts.items.filter(item => (
+        item.helpers.snake === key ||
+        item.name === key ||
+        item.helpers.kebab === key
+      ))
+      if (!items.length) {
+        throw new Error(`No item called ${key}`)
+      }
+      items[0].actions.setValue(newVals[key])
+    }
+  }
+
 
   const Cmpt = (
     <form onSubmit={handleSubmit} {...props}>
@@ -119,6 +133,7 @@ export const SimpleForm = (opts: IOptions) => {
     Cmpt,
     [upperCamel]: Cmpt,
     handleErrors,
+    setValues,
     [`${name}HandleErrors`]: handleErrors,
   }
 
