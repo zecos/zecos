@@ -51,7 +51,7 @@ export const SimpleForm = (opts: IOptions) => {
   const name = opts.name
   const title = camelToTitle(name)
   const upperCamel:string  = camelToUpperCamel(name)
-  
+
   const [attemptedWithErrors, setAttemptedWithErrors] = React.useState(false)
   const [serverErrors, setServerErrors] = React.useState([] as any[])
   const handleErrors = resp => {
@@ -74,7 +74,7 @@ export const SimpleForm = (opts: IOptions) => {
       return
     }
     setAttemptedWithErrors(false)
-    const values = (...args) => getValues(opts.items, ...args)
+    const values = (...args) => getValues(opts.items, ...args).replace('-', '_')
     const actionCallbackArgs: IActionCallbackArgs = {
       items: opts.items,
       values,
@@ -120,7 +120,7 @@ export const SimpleForm = (opts: IOptions) => {
     handleErrors,
     [`${name}HandleErrors`]: handleErrors,
   }
-  
+
 }
 
 function isPromise(value) {
