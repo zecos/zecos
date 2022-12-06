@@ -2,6 +2,25 @@
 # yarn lockfile v1
 
 
+"@zecos/field@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@zecos/field/-/field-0.0.0.tgz#23c713c2226a85aff09581f2944d21b99b284bc8"
+  integrity sha512-Qd7NdDjbbE348m+C58s9e6lA/54ctP+OLQ547COdId1fafcM1qqjW5kvSsfHovrr4mTx8NlDkQqIKVFo8zG/7w==
+  dependencies:
+    "@zecos/validatorz" "0.0.1"
+
+"@zecos/fieldz@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@zecos/fieldz/-/fieldz-0.0.8.tgz#ee2bd2c06b505b671767048e84e15b07e292f4a5"
+  integrity sha512-xSs5KfTqlHPLybYmPCsoMXP2YGIsM8GajeznRnKIwHdLbqZGle5AMocJHIbC4Rwag8By4Jg4czwqKDIgoa4HnQ==
+  dependencies:
+    "@zecos/validatorz" "0.0.1"
+
+"@zecos/validatorz@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@zecos/validatorz/-/validatorz-0.0.1.tgz#ee670d6748a085c8965a692ee8fcf2e3894a24c3"
+  integrity sha512-w38QHxcY7Le+tu8Urws7vcWbmn0cmqiKOUDFHV7SMmUAAmbkJUM6gFaEGfwnCDWip7B9kqrtQXfm6fXWn9cDGA==
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -2140,9 +2159,9 @@ decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2:
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
-  integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
+  integrity sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==
 
 deep-equal@^1.0.1:
   version "1.1.1"
@@ -7728,8 +7747,10 @@ uglifyjs-webpack-plugin@^0.4.6:
     webpack-sources "^1.0.1"
 
 "ui-cmpt@link:..":
-  version "0.0.0"
-  uid ""
+  version "0.0.28"
+  dependencies:
+    "@zecos/field" "^0.0.0"
+    "@zecos/fieldz" "^0.0.8"
 
 union-value@^1.0.0:
   version "1.0.1"
